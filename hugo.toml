@@ -1,6 +1,11 @@
 baseURL = "https://weilidesign.net/"
 languageCode = "zh-TW"
-defaultContentLanguage = "zh-TW"
+defaultContentLanguage = "zh-tw"
+
+[languages]
+  [languages.zh-tw]
+    languageCode = "zh-TW"
+    weight = 1
 title = "維立設計"
 theme = "weili"
 hasCJKLanguage = true
