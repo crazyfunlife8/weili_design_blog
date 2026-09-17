@@ -1,0 +1,74 @@
+{{/* partials/schema.html — JSON-LD structured data (§十一·三 / §十一·十一) */}}
+{{ $ogImage := partial "og-image-resolve.html" . }}
+{{ if not $ogImage }}{{ $ogImage = "/og-default.jpg" | absURL }}{{ end }}
+
+{{/* Speakable specification (§十一·十一·1) */}}
+{{- $speakable := dict
+  "@type" "SpeakableSpecification"
+  "cssSelector" (slice ".hero-desc" ".article-lede" "h1")
+-}}
+
+{{ if .IsPage }}
+{{/* BlogPosting schema */}}
+{{- $about := slice -}}
+{{- with .Params.entities -}}
+  {{- range . -}}
+    {{- $about = $about | append (dict "@type" "Thing" "name" .name "sameAs" .sameAs) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $blogPosting := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" .Description
+  "image" $ogImage
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02")
+  "dateModified" (.Lastmod.Format "2006-01-02")
+  "author" (dict "@type" "Organization" "name" .Site.Params.author "url" .Site.Params.authorURL)
+  "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+  "speakable" $speakable
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+-}}
+{{- if $about -}}
+  {{- $blogPosting = merge $blogPosting (dict "about" $about) -}}
+{{- end -}}
+<script type="application/ld+json">
+{{ $blogPosting | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+
+{{/* BreadcrumbList */}}
+{{- $breadcrumbs := slice -}}
+{{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" 1 "name" "首頁" "item" .Site.BaseURL) -}}
+{{- if .Section -}}
+  {{- $sectionURL := printf "%sposts/%s/" .Site.BaseURL .Section -}}
+  {{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" 2 "name" .Section "item" $sectionURL) -}}
+  {{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
+{{- else -}}
+  {{- $breadcrumbs = $breadcrumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+{{- end -}}
+{{- $breadcrumbList := dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $breadcrumbs
+-}}
+<script type="application/ld+json">
+{{ $breadcrumbList | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+
+{{ else }}
+{{/* WebSite schema for home/list pages */}}
+{{- $website := dict
+  "@context" "https://schema.org"
+  "@type" "WebSite"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "description" .Site.Params.description
+  "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+  "speakable" $speakable
+-}}
+<script type="application/ld+json">
+{{ $website | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{ end }}

@@ -1,0 +1,5 @@
+name = "weili"
+license = "MIT"
+description = "維立設計 自建 editorial theme"
+homepage = "https://weilidesign.net/"
+min_version = "0.120.0"

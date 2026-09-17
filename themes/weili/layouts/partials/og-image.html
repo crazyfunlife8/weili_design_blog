@@ -1,0 +1,8 @@
+{{/* partials/og-image.html
+     OG image output wrapper — calls og-image-resolve with fallback
+     Used from baseof.html, single.html, list.html for og:image meta */}}
+{{ $ogImage := partial "og-image-resolve.html" . }}
+{{ if not $ogImage }}
+  {{ $ogImage = "/og-default.jpg" | absURL }}
+{{ end }}
+{{ return $ogImage }}

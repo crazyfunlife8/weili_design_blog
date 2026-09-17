@@ -1,0 +1,61 @@
+{{/* partials/nav.html — site header + hamburger menu (G8 RWD) */}}
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="{{ .Site.BaseURL }}" class="site-logo" aria-label="{{ .Site.Title }}首頁">
+      <span class="logo-mark">{{ .Site.Title }}</span>
+      <span class="logo-sub">{{ .Site.Params.site_name_en }}</span>
+    </a>
+
+    {{/* Desktop nav: slash-separated */}}
+    <ul class="site-nav" role="list">
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}"
+          class="{{ if eq $.RelPermalink .URL }}active{{ end }}"
+          {{ if eq .URL (printf "%s" $.Site.BaseURL) }}{{ if $.IsHome }}class="active"{{ end }}{{ end }}>
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+
+    {{/* Hamburger button (mobile) */}}
+    <button class="hamburger-btn" id="hamburger-btn"
+      aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  {{/* Mobile nav drawer */}}
+  <nav class="mobile-nav" id="mobile-nav" aria-label="主選單" hidden>
+    <ul>
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>
+
+<script>
+(function(){
+  var btn = document.getElementById('hamburger-btn');
+  var nav = document.getElementById('mobile-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    var open = nav.hasAttribute('hidden');
+    if (open) {
+      nav.removeAttribute('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.classList.add('is-open');
+    } else {
+      nav.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('is-open');
+    }
+  });
+})();
+</script>

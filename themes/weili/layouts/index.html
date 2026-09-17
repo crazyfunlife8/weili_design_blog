@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{/* S1: Hero */}}
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-inner">
+    <p class="hero-label">設計師第一視角 · 裝潢知識筆記 · EST. 2026</p>
+    <h1 id="hero-h1">第一次裝潢，<br>你值得看得清楚。</h1>
+    <span class="hero-rule" aria-hidden="true"></span>
+    <p class="hero-desc">費用怎麼抓、流程從哪開始、怎麼選設計師不後悔——從設計師視角，給你看得懂的裝潢知識。</p>
+  </div>
+</section>
+
+{{/* S2: 最新文章 */}}
+{{ $allPosts := where .Site.RegularPages "Section" "posts" }}
+{{ $recentPosts := first 6 ($allPosts.ByDate.Reverse) }}
+{{ if $recentPosts }}
+<section aria-labelledby="posts-label">
+  <div class="section-wrap">
+    <p class="section-label" id="posts-label">最新文章</p>
+    <div class="post-list" role="list">
+      {{ range $recentPosts }}
+      {{ $page := . }}
+      {{ $ogImage := partial "og-image-resolve.html" $page }}
+      <a href="{{ .Permalink }}" class="post-item" role="listitem">
+        <div class="post-item-side">
+          {{ if not .Date.IsZero }}
+          <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "2006" }}<br>{{ .Date.Format "01.02" }}
+          </time>
+          {{ end }}
+          <span class="post-cat">{{ .Section }}</span>
+        </div>
+        <div class="post-item-main">
+          <div class="post-item-title">{{ .Title }}</div>
+          {{ if .Description }}
+          <div class="post-item-desc">{{ .Description }}</div>
+          {{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* S3: 文章分類 */}}
+<section aria-labelledby="cat-label">
+  <div class="section-wrap" style="padding-top:0">
+    <p class="section-label" id="cat-label">文章分類</p>
+    <nav class="category-list" aria-label="文章分類">
+      {{ $cats := slice
+        (dict "num" "01" "name" "裝潢流程" "url" "/posts/renovation-process/")
+        (dict "num" "02" "name" "費用解析" "url" "/posts/cost-analysis/")
+        (dict "num" "03" "name" "選設計師" "url" "/posts/choose-designer/")
+        (dict "num" "04" "name" "風格入門" "url" "/posts/style-basics/")
+        (dict "num" "05" "name" "材質工法" "url" "/posts/material-methods/")
+      }}
+      {{ range $cats }}
+      <a href="{{ .url }}" class="category-item">
+        <span class="category-num">{{ .num }}</span>
+        <span class="category-name">{{ .name }}</span>
+        <span class="category-arrow" aria-hidden="true">→</span>
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+</section>
+
+{{/* S4: 關於 */}}
+<section class="about-strip" aria-labelledby="about-label">
+  <div class="about-strip-inner">
+    <div>
+      <p class="about-label">About</p>
+      <h2 class="about-heading" id="about-label">關於維立設計</h2>
+    </div>
+    <div class="about-body">
+      <p>執業室內設計師，專做住宅空間。這個部落格寫的不是精美案例，是裝潢過程中你會真正碰到的問題——費用怎麼抓、流程怎麼走、找設計師哪裡容易踩雷。</p>
+      <p>設計師視角，給第一次裝潢的你看得懂的知識。</p>
+    </div>
+  </div>
+</section>
+{{ end }}

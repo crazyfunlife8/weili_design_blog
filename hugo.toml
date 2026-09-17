@@ -1,0 +1,60 @@
+baseURL = "https://weilidesign.net/"
+languageCode = "zh-TW"
+defaultContentLanguage = "zh-TW"
+title = "維立設計"
+theme = "weili"
+hasCJKLanguage = true
+enableRobotsTXT = true
+enableGitInfo = false
+copyright = "© 2026 weilidesign.net"
+paginate = 10
+summaryLength = 70
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokailight"
+
+[params]
+  description = "維立設計 — 設計師第一視角的裝潢知識筆記。費用怎麼抓、流程從哪開始、怎麼選設計師不後悔，給台灣首次裝潢屋主看得懂的知識。"
+  author = "維立設計"
+  authorURL = "https://weilidesign.net/about/"
+  site_name = "維立設計"
+  site_name_en = "Weili Design"
+  company_website = "https://www.wl-spacedesign.com/"
+  instagram_url = "https://www.instagram.com/weilidesign/"
+  threads_url = "https://www.threads.net/@weilidesign"
+  og_image = "/og-default.jpg"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menus]
+  [[menus.main]]
+    name = "首頁"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "裝潢流程"
+    url = "/posts/renovation-process/"
+    weight = 2
+  [[menus.main]]
+    name = "費用解析"
+    url = "/posts/cost-analysis/"
+    weight = 3
+  [[menus.main]]
+    name = "選設計師"
+    url = "/posts/choose-designer/"
+    weight = 4
+  [[menus.main]]
+    name = "關於維立"
+    url = "/about/"
+    weight = 5
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

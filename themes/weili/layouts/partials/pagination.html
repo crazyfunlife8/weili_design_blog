@@ -1,0 +1,17 @@
+{{/* partials/pagination.html */}}
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination" aria-label="分頁導覽">
+  {{ if $paginator.HasPrev }}
+  <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev" rel="prev">← 較新文章</a>
+  {{ end }}
+  <span class="pagination-info">
+    <span class="pagination-current">{{ $paginator.PageNumber }}</span>
+    <span class="pagination-sep"> / </span>
+    <span class="pagination-total">{{ $paginator.TotalPages }}</span>
+  </span>
+  {{ if $paginator.HasNext }}
+  <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next" rel="next">較舊文章 →</a>
+  {{ end }}
+</nav>
+{{ end }}

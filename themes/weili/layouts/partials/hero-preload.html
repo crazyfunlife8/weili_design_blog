@@ -1,0 +1,12 @@
+{{/* partials/hero-preload.html
+     W站 hero image preload (§十一·七)
+     LCP element = h1 文字（純文字 hero、無 hero image），故本站 hero preload 無圖可 preload。
+     保留 partial 結構供未來文章有 page bundle 圖時使用（單篇頁 preload）。 */}}
+{{ if .IsPage }}
+  {{ with .Params.image }}
+    {{ $imgRef := . }}
+    {{ with $.Resources.GetMatch $imgRef }}
+<link rel="preload" as="image" href="{{ .RelPermalink }}" fetchpriority="high">
+    {{ end }}
+  {{ end }}
+{{ end }}

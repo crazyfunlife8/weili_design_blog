@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="cat-header">
+  <div class="cat-header-inner">
+    <p class="cat-breadcrumb">首頁 / {{ .Title }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="cat-header-desc">{{ .Description }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="section-wrap">
+  {{ if .Pages }}
+  <div class="post-list" role="list">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ $page := . }}
+    {{ $ogImage := partial "og-image-resolve.html" $page }}
+    <a href="{{ .Permalink }}" class="post-item" role="listitem">
+      <div class="post-item-side">
+        {{ if not .Date.IsZero }}
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "2006" }}<br>{{ .Date.Format "01.02" }}
+        </time>
+        {{ end }}
+        <span class="post-cat">{{ .Section }}</span>
+      </div>
+      <div class="post-item-main">
+        <div class="post-item-title">{{ .Title }}</div>
+        {{ if .Description }}
+        <div class="post-item-desc">{{ .Description }}</div>
+        {{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="list-empty">此分類目前尚無文章。</p>
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

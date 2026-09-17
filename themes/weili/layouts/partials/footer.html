@@ -1,0 +1,18 @@
+{{/* partials/footer.html */}}
+<footer class="site-footer-wrap">
+  <div class="site-footer">
+    <span class="footer-brand">{{ .Site.Params.site_name_en | upper }} · {{ .Site.Title }}</span>
+    <div class="footer-links">
+      {{ with .Site.Params.instagram_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Instagram">IG</a>
+      {{ end }}
+      {{ with .Site.Params.threads_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Threads">Threads</a>
+      {{ end }}
+      {{ with .Site.Params.company_website }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="維立設計官網">WL Space Design</a>
+      {{ end }}
+    </div>
+    <span class="footer-copy">{{ .Site.Copyright }}</span>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+{{/* shortcode: figure — page bundle aware image with width/height (Gate 12) */}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $class := .Get "class" -}}
+
+{{- $imgURL := "" -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+
+{{- with .Page.Resources.GetMatch $src -}}
+  {{- $imgURL = .RelPermalink -}}
+  {{- $width = .Width | string -}}
+  {{- $height = .Height | string -}}
+{{- else -}}
+  {{- $imgURL = $src | absURL -}}
+{{- end -}}
+
+<figure{{ if $class }} class="{{ $class }}"{{ end }}>
+  <img src="{{ $imgURL }}"
+    alt="{{ $alt }}"
+    {{ if $width }}width="{{ $width }}"{{ end }}
+    {{ if $height }}height="{{ $height }}"{{ end }}
+    loading="{{ $loading }}"
+    decoding="async">
+  {{ if $caption }}<figcaption>{{ $caption }}</figcaption>{{ end }}
+</figure>
