@@ -2,50 +2,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{{/* Hero image preload (LCP 最佳化, §十一·七) — before fonts CSS */}}
-{{ partial "hero-preload.html" . }}
-
-{{/* Google Fonts: CJK 站用 preload+onload swap (§十一·十) */}}
+{{/* Google Fonts: Cormorant Garamond + Noto Serif TC + JetBrains Mono */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style"
-  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=JetBrains+Mono:wght@400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap"
   onload="this.rel='stylesheet'">
 <noscript>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=JetBrains+Mono:wght@400&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Serif+TC:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap">
 </noscript>
 
 {{/* Critical CSS inline (above-fold) */}}
 <style>
-:root{--color-bg:#F5F0E8;--color-surface:#EDE7D6;--color-accent:#B8763C;--color-accent-dk:#8C5528;--color-text:#2C2318;--color-text-sub:#7A6A52;--color-rule:#D4C9B0;--color-white:#FDFAF4;--font-display:'Plus Jakarta Sans','Noto Sans TC',sans-serif;--font-body:'Noto Sans TC',sans-serif;--font-ui:'Plus Jakarta Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--max-wide:1120px;--edge:2rem}
+:root{
+  --color-bg:#F9F7F4;
+  --color-text:#1A1612;
+  --color-accent:#8B6914;
+  --color-muted:#6B6560;
+  --color-rule:#D8D4CE;
+  --color-surface:#F2EFE9;
+  --color-surface-2:#E8E4DD;
+  --color-white:#FFFFFF;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Noto Serif TC',serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --font-ui:'Noto Serif TC',serif;
+  --max-wide:1120px;
+  --edge:2rem;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:1rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 .site-header{position:sticky;top:0;z-index:100;background:var(--color-bg);border-bottom:1px solid var(--color-rule)}
-.site-header-inner{max-width:var(--max-wide);margin:0 auto;padding:0 var(--edge);display:flex;align-items:flex-end;justify-content:space-between;min-height:58px}
+.site-header-inner{max-width:var(--max-wide);margin:0 auto;padding:0 var(--edge);display:flex;align-items:flex-end;justify-content:space-between;min-height:64px}
 .site-logo{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:.875rem;text-decoration:none;line-height:1}
-.logo-mark{font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--color-text);letter-spacing:-.025em;position:relative;padding-bottom:3px;display:inline-block}
+.logo-mark{font-family:var(--font-body);font-weight:400;font-size:1.25rem;color:var(--color-text);letter-spacing:-.01em;position:relative;padding-bottom:4px;display:inline-block}
 .logo-mark::after{content:'';position:absolute;left:0;bottom:0;width:1.6rem;height:2px;background:var(--color-accent)}
-.logo-sub{font-family:var(--font-mono);font-size:.625rem;color:var(--color-text-sub);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
-.hero{background:var(--color-surface);border-bottom:1px solid var(--color-rule);padding:4rem var(--edge) 3.5rem}
+.logo-sub{font-family:var(--font-mono);font-size:.5625rem;color:var(--color-muted);letter-spacing:.18em;text-transform:uppercase;margin-top:5px}
+.hero{padding:4.5rem var(--edge) 3.5rem}
 .hero-inner{max-width:var(--max-wide);margin:0 auto}
-.hero-label{font-family:var(--font-mono);font-size:.6875rem;color:var(--color-text-sub);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.75rem}
-.hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.375rem,5.5vw,3.75rem);color:var(--color-text);line-height:1.1;letter-spacing:-.03em;margin-bottom:2rem;max-width:760px}
-.hero-rule{display:block;width:3rem;height:2px;background:var(--color-accent);margin-bottom:1.25rem}
-.hero-desc{font-size:1rem;color:var(--color-text-sub);max-width:480px;line-height:1.7}
+.hero-label{font-family:var(--font-mono);font-size:.625rem;color:var(--color-muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:2rem}
+.hero h1{font-family:var(--font-display);font-weight:300;font-size:clamp(2.375rem,5.5vw,3.75rem);color:var(--color-text);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem}
+.hero-rule{display:block;width:3rem;height:2px;background:var(--color-accent);margin-bottom:1.5rem}
+.hero-desc{font-size:1rem;color:var(--color-muted);max-width:520px;line-height:1.8}
 </style>
 
-{{/* main.css sync stylesheet + cache busting (§十一·八) */}}
-<link rel="stylesheet" href="{{ "/css/main.css" | absURL }}?v={{ now.Unix }}">
+{{/* main.css (root-relative, works on any domain) */}}
+<link rel="stylesheet" href="/css/main.css?v={{ now.Unix }}">
 
-{{/* Favicon 四檔 (§十一·九) */}}
+{{/* Favicon */}}
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 {{/* SEO Title */}}
 <title>{{ if .IsHome }}{{ .Site.Title }} — 裝潢知識部落格{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
@@ -61,7 +70,7 @@ img{display:block;max-width:100%;height:auto}
 {{/* OG image resolve */}}
 {{ $ogImage := partial "og-image-resolve.html" . }}
 {{ if not $ogImage }}
-  {{ $ogImage = "/og-default.jpg" | absURL }}
+  {{ $ogImage = absURL "/og-default.jpg" }}
 {{ end }}
 
 {{/* Open Graph */}}
