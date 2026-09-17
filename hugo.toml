@@ -1,19 +1,21 @@
 baseURL = "https://weilidesign.net/"
 languageCode = "zh-TW"
 defaultContentLanguage = "zh-tw"
-
-[languages]
-  [languages.zh-tw]
-    languageCode = "zh-TW"
-    weight = 1
 title = "維立設計"
 theme = "weili"
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableGitInfo = false
 copyright = "© 2026 weilidesign.net"
-paginate = 10
 summaryLength = 70
+
+[pagination]
+  pagerSize = 10
+
+[languages]
+  [languages.zh-tw]
+    languageCode = "zh-TW"
+    weight = 1
 
 [markup]
   [markup.goldmark]
