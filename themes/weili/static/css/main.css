@@ -4,6 +4,9 @@
    This file: everything below the fold
 ═══════════════════════════════════════════════════ */
 
+/* STICKY FOOTER — main fills remaining viewport height */
+#main-content { flex: 1 0 auto; }
+
 /* NAV */
 .site-nav {
   display: flex;
@@ -229,16 +232,17 @@
 /* FOOTER */
 .site-footer-wrap {
   border-top: 1px solid var(--color-rule);
+  flex-shrink: 0;
 }
 .site-footer {
-  padding: 1.75rem var(--edge);
+  height: 72px;
+  padding: 0 var(--edge);
   max-width: var(--max-wide);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 .footer-brand {
   font-family: var(--font-mono);
@@ -592,8 +596,8 @@
   /* About strip: single col */
   .about-strip-inner { grid-template-columns: 1fr; gap: 1.5rem; }
 
-  /* Footer: stacked */
-  .site-footer { flex-direction: column; align-items: flex-start; gap: 0.375rem; }
+  /* Footer: stacked (remove fixed height, let it grow) */
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 0.375rem; height: auto; padding: 1.25rem var(--edge); }
 
   /* Article header full padding */
   .article-header { padding-top: 2.25rem; }
