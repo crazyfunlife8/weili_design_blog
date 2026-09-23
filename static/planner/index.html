@@ -328,7 +328,7 @@ let S = {screen:'intro', i:0, a:fresh(), person:1, first:null, sample:false, cas
 function fresh(){ return {members:[], trade:[0,0,0,0,0], pain:[], mood:[]}; }
 const app = document.getElementById('app');
 const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const markTag = '<img src="/favicon-32.png" width="28" height="28" style="display:block;flex-shrink:0" alt="" aria-hidden="true">';
+const markTag = '<div style="width:28px;height:28px;border-radius:50%;overflow:hidden;flex-shrink:0;background:url(/apple-touch-icon.png) center/190% no-repeat" aria-hidden="true"></div>';
 const optV = o => typeof o==='string' ? o : o.v;
 const has = (a,k,v) => (a[k]||[]).includes(v);
 
