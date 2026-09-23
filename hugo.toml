@@ -60,6 +60,10 @@ summaryLength = 70
     name = "關於維立"
     url = "/about/"
     weight = 5
+  [[menus.main]]
+    name = "裝潢前整理"
+    url = "/planner/"
+    weight = 6
 
 [sitemap]
   changefreq = "weekly"

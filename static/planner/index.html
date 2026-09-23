@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="維立室內設計｜找設計師之前，先把自己家想清楚。三分鐘整理出你的需求、預算分配與該問的問題">
+<meta property="og:title" content="裝潢前想清楚｜維立室內設計">
+<meta property="og:description" content="三分鐘，整理出你家的需求、預算怎麼分，還有見設計師該問什麼">
+<meta property="og:type" content="website">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font-size:14px;background:#F6F3ED}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>裝潢前想清楚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+:root{
+  --ground:#F6F3ED; --paper:#FFFDF9; --sand:#E3D9CD; --brass:#C5B091; --brass-ink:#806a45;
+  --ink:#2E2E2E; --muted:#6c655b; --line:#e2d8ca; --on-ink:#F6F3ED;
+  --note-bg:#fff4c9; --note-ink:#6b5412; --flag:#b4552f;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#1c1a17; --paper:#25221e; --sand:#3a342c; --brass:#C5B091; --brass-ink:#d9c49e;
+    --ink:#eee8de; --muted:#a79e90; --line:#39332b; --on-ink:#1c1a17;
+    --note-bg:#3d3418; --note-ink:#f0dc9a; --flag:#e08a62;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#1c1a17; --paper:#25221e; --sand:#3a342c; --brass:#C5B091; --brass-ink:#d9c49e;
+  --ink:#eee8de; --muted:#a79e90; --line:#39332b; --on-ink:#1c1a17;
+  --note-bg:#3d3418; --note-ink:#f0dc9a; --flag:#e08a62;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;padding-inline:16px;padding-block:24px 64px}
+.wrap{max-width:540px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0;line-height:1.35}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brass-ink);outline-offset:2px}
+.brand{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);letter-spacing:.08em}
+.brand .mark{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--on-ink);display:grid;place-items:center;font-family:var(--serif);font-size:14px;letter-spacing:0}
+.note{background:var(--note-bg);color:var(--note-ink);font-size:13px;line-height:1.6;padding:10px 12px;border-radius:6px}
+.note b{font-weight:700}
+
+/* intro */
+.intro{display:grid;gap:24px;padding-top:16px}
+.intro h1{font-size:34px;font-weight:700}
+.intro .lede{color:var(--muted);font-size:16px}
+.gets{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.gets li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.gets .ic{width:36px;height:36px;border-radius:8px;background:var(--sand);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--brass-ink)}
+.gets b{display:block;font-weight:700}
+.gets span{color:var(--muted);font-size:14px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:999px;padding:14px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:16px}
+.btn-main{background:var(--ink);color:var(--on-ink)}
+.btn-main:disabled{opacity:.35;cursor:not-allowed}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn-line{background:#06C755;color:#fff}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn-row .btn{flex:1 1 auto}
+.linkish{background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;padding:4px 0}
+
+/* step */
+.top{display:grid;gap:10px;margin-bottom:22px}
+.progress{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;height:3px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brass-ink);transition:width .4s ease}
+.bubble{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:20px;animation:rise .45s ease both}
+.bubble .mark{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--on-ink);display:grid;place-items:center;font-family:var(--serif);font-size:13px}
+.bubble p{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:10px 14px;font-size:15px}
+@keyframes rise{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.bubble{animation:none}.bar i{transition:none}}
+.q h2{font-size:26px;font-weight:700}
+.q .sub{color:var(--muted);margin:6px 0 0;font-size:15px}
+.group{margin-top:22px}
+.group > .label{font-size:13px;color:var(--muted);letter-spacing:.06em;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;cursor:pointer;font-size:15px;transition:background .15s,border-color .15s}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.chip.block{border-radius:10px;width:100%;text-align:left;padding:14px 16px}
+.stack{display:grid;gap:8px}
+input[type=date],input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+
+.pairs{display:grid;gap:22px;margin-top:22px}
+.pair .ends{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:500}
+.pair .ends span:last-child{text-align:right}
+.pair .ends span.lean{color:var(--brass-ink);font-weight:700}
+.pair input[type=range]{width:100%;accent-color:var(--brass-ink);margin:8px 0 0}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 2px}
+
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.photo{position:relative;border:0;padding:0;border-radius:10px;overflow:hidden;cursor:pointer;background:var(--sand);aspect-ratio:4/3;max-width:100%}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.photo .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;background:linear-gradient(transparent,rgba(20,18,15,.75));color:#fff;font-size:14px;text-align:left}
+.photo .tick{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.25);display:grid;place-items:center;color:#fff;font-size:14px;font-weight:700}
+.photo[aria-pressed="true"]{outline:3px solid var(--brass-ink);outline-offset:-3px}
+.photo[aria-pressed="true"] .tick{background:var(--brass-ink);border-color:var(--brass-ink)}
+
+.nav{display:flex;gap:10px;margin-top:30px;align-items:center}
+.nav .btn-main{flex:1}
+
+/* result */
+.res{display:grid;gap:34px}
+.res-head{display:grid;gap:6px}
+.res-head h1{font-size:30px}
+.res-head .meta{color:var(--muted);font-size:14px}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 18px;display:grid;gap:0}
+.sheet .row{display:grid;grid-template-columns:76px 1fr;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.sheet .row:first-of-type{border-top:0;padding-top:4px}
+.sheet dt{font-size:13px;color:var(--muted);letter-spacing:.06em;padding-top:2px}
+.sheet dd{margin:0;font-size:15px}
+.sheet .sheet-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--ink);margin-bottom:6px}
+.sheet .sheet-title h2{font-size:18px}
+.sheet .sheet-title span{font-size:12px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:var(--sand);border-radius:6px;padding:2px 9px;font-size:14px}
+.thumbs{display:flex;gap:6px}
+.thumbs img{width:64px;height:48px;object-fit:cover;border-radius:6px}
+.big{font-family:var(--serif);font-size:17px;font-weight:700}
+
+section h2{font-size:21px;margin-bottom:6px}
+section > .sub{color:var(--muted);font-size:15px;margin:0 0 14px}
+.tracks{display:grid;gap:16px}
+.track .ends{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.track .line{position:relative;height:24px;margin-top:2px}
+.track .line::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:var(--line)}
+.track .line::after{content:"";position:absolute;left:50%;top:6px;width:1px;height:12px;background:var(--line)}
+.dot{position:absolute;top:4px;width:16px;height:16px;border-radius:50%;background:var(--ink);transform:translateX(-50%);border:2px solid var(--paper)}
+.dot.b{background:var(--brass);}
+.track.diff .ends{color:var(--flag);font-weight:700}
+.flagtxt{font-size:13px;color:var(--flag)}
+
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.qs label{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:15px}
+.qs input{margin-top:5px;accent-color:var(--brass-ink);width:16px;height:16px}
+.qs .why{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.qs input:checked + span{color:var(--muted);text-decoration:line-through}
+
+.boss{border:2px dashed var(--brass);border-radius:14px;padding:18px;display:grid;gap:10px}
+.boss .who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+.boss .who .mark{width:34px;height:34px;border-radius:50%;background:var(--sand);display:grid;place-items:center;font-family:var(--serif);color:var(--brass-ink);font-weight:700}
+.boss blockquote{margin:0;font-family:var(--serif);font-size:17px;color:var(--muted)}
+
+.ba{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:12px;overflow:hidden;background:var(--sand);user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .before{clip-path:inset(0 50% 0 0)}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.4);pointer-events:none}
+.ba .handle::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#fff;color:#2E2E2E;display:grid;place-items:center;font-size:16px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .lab{position:absolute;top:10px;padding:2px 10px;border-radius:999px;background:rgba(20,18,15,.6);color:#fff;font-size:13px;pointer-events:none}
+.ba .lab.l{left:10px}.ba .lab.r{right:10px}
+.tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.case-head{display:grid;gap:2px;margin-bottom:12px}
+.case-head span:last-child{color:var(--muted);font-size:15px}
+.other{margin-top:10px;font-size:14px;color:var(--muted)}
+
+.duo{background:var(--ink);color:var(--on-ink);border-radius:14px;padding:22px 20px;display:grid;gap:12px}
+.duo h2{font-size:21px}
+.duo p{margin:0;font-size:15px;opacity:.85}
+.duo .btn{background:var(--on-ink);color:var(--ink);justify-self:start}
+
+.cta{display:grid;gap:12px;text-align:left}
+.cta p{margin:0;color:var(--muted);font-size:15px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.col h3{font-size:14px;font-family:var(--sans);color:var(--muted);font-weight:500;margin-bottom:6px}
+.legend{display:flex;gap:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:50%;background:var(--ink);display:inline-block}
+.legend i.b{background:var(--brass)}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+</style>
+<style>
+.opt-desc{display:block;font-size:13px;color:var(--muted);margin-top:2px;font-weight:400}
+.chip.block[aria-pressed="true"] .opt-desc{color:var(--on-ink);opacity:.8}
+.gwhy{font-size:13px;color:var(--brass-ink);margin:-2px 0 8px;line-height:1.55}
+.skip{font-size:13px;color:var(--muted);margin-top:4px}
+.budget{display:grid;gap:14px}
+.brow{display:grid;gap:4px}
+.brow .top2{display:flex;justify-content:space-between;gap:10px;font-size:15px;font-weight:500}
+.brow .top2 span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.brow .track2{height:10px;background:var(--sand);border-radius:6px;overflow:hidden}
+.brow .track2 i{display:block;height:100%;background:var(--brass-ink);border-radius:6px}
+.brow.reserve .track2 i{background:var(--flag)}
+.brow small{color:var(--muted);font-size:13px}
+.decide{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.decide li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px}
+.decide .st{font-size:12px;font-weight:700;letter-spacing:.04em}
+.decide .st.todo{color:var(--flag)}
+.decide .st.done{color:var(--brass-ink)}
+.decide b{font-size:15px}
+.decide small{color:var(--muted);font-size:13px}
+.boss-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.boss-list li{font-size:15px;padding-left:14px;border-left:2px solid var(--brass)}
+.boss-list li b{display:block;font-size:14px;color:var(--brass-ink)}
+.src{font-size:12px;color:var(--muted)}
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script>
+/* 案子代號：bq 板橋老屋 / nh 內湖陽光宅 / sc 三重冠德天映 / jy 集英路 / yj 另一間老屋 / aw 新美式得獎作品 */
+const MOODS = [
+  {id:'bq-living', c:'bq', label:'木頭層架，暖暖的客廳'},
+  {id:'nh-window', c:'nh', label:'窗邊可以坐著的客廳'},
+  {id:'sc-living', c:'sc', label:'石材電視牆，沉穩一點'},
+  {id:'aw-living', c:'aw', label:'有一點飯店感的客廳'},
+  {id:'bq-kitchen', c:'bq', label:'深藍色的廚房'},
+  {id:'jy-kitchen', c:'jy', label:'淡紫色的廚房'},
+  {id:'nh-dining', c:'nh', label:'吊燈下的餐桌'},
+  {id:'aw-dining', c:'aw', label:'鏡面跟吊燈，華麗一點'},
+  {id:'bq-entry', c:'bq', label:'小小的玄關，也有記憶點'},
+  {id:'sc-entry', c:'sc', label:'一進門就有端景'},
+  {id:'bq-cabinet', c:'bq', label:'收納也可以好看'},
+  {id:'nh-study', c:'nh', label:'窗邊的小書桌'},
+  {id:'jy-kid', c:'jy', label:'粉紅色的小孩房'},
+  {id:'sc-bath', c:'sc', label:'有浴缸的浴室'},
+  {id:'aw-bed', c:'aw', label:'深色的牆，安靜的房間'},
+  {id:'bed', c:'yj', label:'燈光柔柔的，好睡'}
+];
+const IMG = Object.fromEntries(MOODS.map(m=>[m.id, `img/${m.id}.jpg`]));
+
+/* 風格說明取自維立的需求表 */
+const STYLES = [
+  {v:'日式侘寂', d:'大地色跟中性色，藤編、亞麻、石材、植物，質樸安靜'},
+  {v:'現代簡約', d:'黑灰白，玻璃跟金屬，收納藏起來，乾淨俐落'},
+  {v:'日式無印', d:'牆面天花板簡單，淺色木紋地板，明亮樸實'},
+  {v:'中性北歐', d:'冷灰配杏色木頭，留白寬敞，植物點綴'},
+  {v:'美式工業', d:'黑灰白配金屬跟仿舊皮革，水泥感，鐵件管線外露'},
+  {v:'法式輕奢', d:'淺色柔和，框線加上弧形，精緻的花藝'},
+  {v:'美式鄉村', d:'大量木頭跟石材，花草圖騰，復古懷舊'},
+  {v:'新古典', d:'線板、水晶燈、壁紙繃布，白灰跟灰藍，古典優雅'},
+  {v:'輕美式', d:'輕巧的裝潢，美式加一點歐式古典跟現代感'},
+  {v:'還說不上來', d:'沒關係，下一步挑照片就好'}
+];
+
+const PAIRS = [
+  ['收納多一點','空間看起來大一點'],
+  ['客廳大一點','多一間房間'],
+  ['一次做到位','先住進去再慢慢加'],
+  ['好整理','有個性、好看'],
+  ['一家人待在一起的空間','每個人有自己的角落']
+];
+const PAINS = ['收納不夠放','光線太暗','動線卡卡的','漏水或壁癌','老管線不放心','怕預算超支','怕中途被追加','不知道從哪開始','家人意見不一樣','時間很趕'];
+
+/* 案子介紹只用老闆在影片、貼文裡講過的內容 */
+const room=(label,b,a,note='')=>({label, before:`img/${b}.jpg`, after:`img/${a}.jpg`, note});
+const CASES = {
+  bq:{name:'板橋 22 坪老屋', lede:'整個格局打掉，排成 3 房 2 廳 2 衛，留給兩個小孩長大',
+    rooms:[room('玄關','bq-entry-before','bq-entry','增設獨立玄關區，選用水磨石磁磚'), room('客廳','bq-living-before','bq-living-after','不做天花板，維持樓高'), room('廚房','bq-kitchen-before','bq-kitchen','微調開門位置，設備重新配置'), room('房間','bq-bed-before','bq-bed-after'), room('浴室','bq-bath-before','bq-bath-after','改成乾濕分離')]},
+  nh:{name:'內湖陽光宅', lede:'',
+    rooms:[room('客廳','nh-living-before','nh-living-after'), room('餐廳','nh-dining-before','nh-dining'), room('廚房','nh-kitchen-before','nh-kitchen-after'), room('房間','nh-room-before','nh-room-after'), room('浴室','nh-bath-before','nh-bath-after')]},
+  sc:{name:'三重冠德天映', lede:'',
+    rooms:[room('玄關','sc-entry-before','sc-entry'), room('客廳','sc-living-before','sc-living'), room('廚房','sc-kitchen-before','sc-kitchen-after'), room('房間','sc-room-before','sc-room-after'), room('浴室','sc-bath-before','sc-bath')]},
+  jy:{name:'集英路', lede:'', gallery:['img/jy-living.jpg','img/jy-dining.jpg','img/jy-kitchen.jpg','img/jy-bed.jpg','img/jy-kid.jpg']},
+  yj:{name:'另一間老房子', lede:'',
+    rooms:[room('客廳','living-before','living-after'), room('和室','washitsu-before','washitsu-after'), room('臥室','bedroom-before','bedroom-after')]},
+  aw:{name:'新美式・得獎作品', lede:'', gallery:['img/aw-entry.jpg','img/aw-living.jpg','img/aw-dining.jpg','img/aw-bed.jpg']}
+};
+const STYLE_CASE = {'新古典':'aw','輕美式':'aw','法式輕奢':'aw','現代簡約':'sc','美式工業':'sc','日式無印':'bq','中性北歐':'nh','日式侘寂':'nh','美式鄉村':'jy'};
+function matchCase(a){
+  const votes = {bq:0, nh:0, sc:0, jy:0, yj:0, aw:0};
+  (a.mood||[]).forEach(id=>{ const m=MOODS.find(x=>x.id===id); if(m) votes[m.c]++; });
+  (a.style||[]).forEach(s=>{ if(STYLE_CASE[s]) votes[STYLE_CASE[s]]+=.5; });
+  if(a.kind==='住了很久的老房子'){ votes.bq+=.6; votes.yj+=.3; }
+  if(a.kind==='中古屋，前屋主剛搬走'){ votes.nh+=.5; votes.bq+=.3; }
+  if(a.kind==='新成屋，還沒住過'){ votes.sc+=.6; }
+  if(a.area==='台北市') votes.nh+=.4;
+  if(a.area==='新北市'){ votes.bq+=.4; votes.sc+=.3; }
+  return Object.keys(votes).sort((x,y)=>votes[y]-votes[x]);
+}
+const LINE_URL = 'https://line.me/R/ti/p/@443xjwvc';
+
+const STEPS = [
+  {key:'who', title:'這個家，是誰要住', sub:'先讓我們認識一下這個家',
+    groups:[
+      {id:'owner', label:'誰住', type:'single', opts:['自己住','給家人住','出租或之後要賣']},
+      {id:'people', label:'平常幾個人', type:'single', opts:['一個人','兩個人','三到四個','五個以上']},
+      {id:'members', label:'家裡有沒有（可複選，沒有就跳過）', type:'multi', opts:['長輩','小小孩','毛小孩','有人在家工作']}
+    ], need:['owner','people']},
+  {key:'house', title:'房子跟時間', sub:'',
+    groups:[
+      {id:'kind', label:'屋況', type:'single', block:true, opts:['新成屋，還沒住過','中古屋，前屋主剛搬走','住了很久的老房子']},
+      {id:'area', label:'在哪裡', type:'single', opts:['台北市','新北市','桃園','其他縣市']},
+      {id:'when', label:'希望什麼時候住進去', type:'single', opts:['三個月內','半年內','一年內','還沒確定']}
+    ], need:['kind','area','when']},
+  {key:'trade', title:'五個二選一', sub:'沒有標準答案，照直覺拉就好，中間代表兩邊一樣重要',
+    groups:[{id:'trade', type:'sliders'}], need:[]},
+  {key:'pain', title:'現在最讓你卡住的是哪幾件', sub:'最多選三個',
+    groups:[{id:'pain', type:'multi', max:3, opts:PAINS}], need:['pain']},
+  {key:'mood', title:'哪幾張讓你覺得「對，就是這種感覺」', sub:'最多選三張，這些都是維立做過的房子',
+    groups:[{id:'mood', type:'photos', max:3}], need:['mood']},
+  {key:'budget', title:'最後，預算的部分', sub:'寫給你自己看的，填了數字會幫你算怎麼分配',
+    groups:[
+      {id:'budget', label:'', type:'single', block:true, opts:['心裡大概有個數字','完全還沒概念','先不想說']},
+      {id:'budgetNum', label:'大概多少萬（寫範圍也可以）', type:'text', showIf:a=>a.budget==='心裡大概有個數字', ph:'例如 200 或 180 到 220'}
+    ], need:['budget']}
+];
+
+const SAMPLE = {
+  owner:'自己住', people:'三到四個', members:['長輩','毛小孩'],
+  kind:'住了很久的老房子', area:'新北市', when:'半年內',
+  trade:[-2,1,-1,-2,1],
+  pain:['老管線不放心','怕中途被追加','家人意見不一樣'],
+  mood:['bq-living','bq-cabinet','nh-dining'],
+  budget:'心裡大概有個數字', budgetNum:'200'
+};
+const SAMPLE_B = Object.assign({}, SAMPLE, {
+  when:'一年內', trade:[1,-1,-1,1,1],
+  pain:['老管線不放心','光線太暗','怕預算超支'],
+  mood:['aw-living','nh-dining','bed']
+});
+
+let S = {screen:'intro', i:0, a:fresh(), person:1, first:null, sample:false, caseIdx:0, caseKey:null, code:null};
+function fresh(){ return {members:[], trade:[0,0,0,0,0], pain:[], mood:[]}; }
+const app = document.getElementById('app');
+const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const markTag = '<span class="mark" aria-hidden="true">維</span>';
+const optV = o => typeof o==='string' ? o : o.v;
+const has = (a,k,v) => (a[k]||[]).includes(v);
+
+/* ---------- 每一步之後的回應：只講觀察跟同理 ---------- */
+function replyAfter(key, a){
+  if(key==='who'){
+    const m = a.members||[];
+    if(m.includes('有人在家工作')) return '有人在家工作的話，網路跟一個能關門的角落都要先想，後面會問到';
+    if(m.includes('長輩')) return '有長輩一起住，整理的時候會把這點放在前面';
+    if(m.includes('小小孩')) return '家裡有小小孩，後面會一起算進去';
+    if(m.includes('毛小孩')) return '毛小孩也是家人，記下來了';
+    return '好，先記下來了';
+  }
+  if(key==='house'){
+    if(has(a,'special','要放神明廳或佛龕')) return '神明廳的位置通常要最早定，記下來了，見設計師時第一個講';
+    if(a.kind==='住了很久的老房子') return '老房子每一間狀況都不一樣，結果頁會列出老闆特別提醒老屋的事';
+    if(a.kind==='中古屋，前屋主剛搬走') return '前屋主留下來的東西，哪些留哪些拆，結果頁會幫你列成要問的問題';
+    if(a.when==='三個月內') return '時間有點趕，那種壓力我們懂，結果頁會把要先確認的事排在前面';
+    return '新成屋可以從一張白紙開始想，很好';
+  }
+  if(key==='time'){
+    const w = weeksLeft(a.date);
+    if(w!==null && w>0) return `離你填的日子還有 ${w} 週左右，結果頁會把要先確認的事排在前面`;
+    if(a.when==='三個月內') return '時間有點趕，那種壓力我們懂，要先確認的事會排在最前面';
+    if(a.when==='還沒確定') return '還沒確定也沒關係，趁現在先想清楚反而最從容';
+    return '收到，時間記下來了';
+  }
+  if(key==='trade'){
+    const top = leanings(a.trade)[0];
+    if(!top) return '五題都拉在中間，看起來你每一邊都想要，這很正常，見面時可以慢慢聊';
+    return `看起來你最在意的是「${top.text}」`;
+  }
+  if(key==='rooms'){
+    const n = ['entry','living','livingMore','dining','bedroom'].reduce((s,k)=>s+(a[k]||[]).length,0);
+    return n ? `點了 ${n} 項，這些設計師第一次見面就會問，你已經先想好了` : '沒關係，這些見面時設計師會一項一項問';
+  }
+  if(key==='hidden'){
+    const todo = ['air','ac','water'].filter(k=>a[k]==='還不知道').length;
+    return todo ? `有 ${todo} 項還不知道，結果頁會標出來，記得在天花板施工前決定` : '這幾項你都有想法了，很多人到施工才發現要決定';
+  }
+  if(key==='life') return '這些小習慣，會決定插座跟櫃子放在哪裡';
+  if(key==='pain'){
+    const p = a.pain||[];
+    if(p.includes('家人意見不一樣')) return '結果頁有個功能，可以讓另一半也填一次，直接看出你們哪裡想得不一樣';
+    if(p.includes('怕中途被追加')||p.includes('怕預算超支')) return '擔心預算的人很多，結果頁會照維立的建議幫你把預算分一分';
+    if(p.includes('不知道從哪開始')) return '不知道從哪開始的人，其實已經在開始了，你現在就在做';
+    return '這幾件事都記下來了';
+  }
+  if(key==='style') return (a.style||[]).includes('還說不上來') ? '說不上來很正常，照片比名詞好懂，下一步用挑的' : '記下來了，再挑幾張照片，設計師會更懂你說的是哪一種';
+  if(key==='mood') return '你挑的這幾張會放進整理單，設計師一看就知道你喜歡什麼';
+  return '';
+}
+
+function weeksLeft(d){
+  if(!d) return null;
+  const t = new Date(d+'T00:00:00'); if(isNaN(t)) return null;
+  return Math.round((t - new Date())/(7*864e5));
+}
+function leanings(trade){
+  return trade.map((v,k)=>({k, v, abs:Math.abs(v), text: v<0 ? PAIRS[k][0] : PAIRS[k][1]}))
+    .filter(x=>x.abs>=1).sort((x,y)=>y.abs-x.abs || x.k-y.k);
+}
+function budgetNumber(a){
+  if(a.budget!=='心裡大概有個數字') return null;
+  const nums = String(a.budgetNum||'').match(/\d+(\.\d+)?/g);
+  if(!nums) return null;
+  const v = nums.slice(0,2).map(Number);
+  return v.reduce((s,x)=>s+x,0)/v.length;
+}
+
+/* ---------- 見設計師可以問的題目 ----------
+   原則：題目要直接回應觸發它的那個答案，副標題寫出是哪個答案 */
+function questionsFor(a){
+  const out = [];
+  const add = (q, why) => { if(!out.find(x=>x.q===q)) out.push({q, why:`你選了「${why}」`}); };
+  const p = a.pain||[], m = a.members||[];
+  if(p.includes('時間很趕')) add('照我想入住的時間往回推，設計最晚什麼時候要決定好？','時間很趕');
+  else if(a.when==='三個月內') add('照我想入住的時間往回推，設計最晚什麼時候要決定好？','三個月內住進去');
+  if(p.includes('怕中途被追加')) add('報價單上哪些項目，之後有可能再增加？可以先標出來嗎？','怕中途被追加');
+  if(p.includes('怕預算超支')) add('我的預算大概這樣，哪些一定要做、哪些可以之後再加？','怕預算超支');
+  if(p.includes('老管線不放心')) add('舊管線要不要換，可以現場看過再跟我說嗎？','老管線不放心');
+  if(p.includes('漏水或壁癌')) add('漏水壁癌的地方，可以先看現場再決定怎麼處理嗎？','漏水或壁癌');
+  if(p.includes('收納不夠放')) add('我家東西大概有這些，可以先幫我看要收在哪裡嗎？','收納不夠放');
+  if(p.includes('光線太暗')) add('我家光線比較暗，有什麼辦法讓空間亮一點？','光線太暗');
+  if(p.includes('動線卡卡的')) add('現在的動線很卡，格局有沒有調整的空間？','動線卡卡的');
+  if(p.includes('家人意見不一樣')) add('可以約全家一起來聊一次嗎？','家人意見不一樣');
+  if(p.includes('不知道從哪開始')) add('第一次見面，我需要先準備什麼？平面圖、照片還是別的？','不知道從哪開始');
+  if(a.kind==='住了很久的老房子') add('拆開之後如果發現原本看不到的問題，會怎麼告訴我、怎麼報價？','住了很久的老房子');
+  if(a.kind==='中古屋，前屋主剛搬走') add('前屋主留下來的櫃子跟設備，哪些還可以留著用？','中古屋');
+  if(a.kind==='新成屋，還沒住過') add('插座要新增或移位的話，會不會影響建商的保固？','新成屋');
+  if(m.includes('長輩')) add('家裡有長輩一起住，哪些地方你會建議特別留意？','長輩');
+  if(m.includes('小小孩')) add('家裡有小小孩，哪些地方要特別注意安全？','小小孩');
+  if(m.includes('毛小孩')) add('家裡有毛小孩，地板跟沙發這些要怎麼挑？','毛小孩');
+  if(m.includes('有人在家工作')) add('在家工作要穩定的網路，網路線可以先配到書桌嗎？','有人在家工作');
+  if(a.owner==='出租或之後要賣') add('出租或之後要賣的話，哪些地方可以省、哪些不能省？','出租或之後要賣');
+  const fill = [['看完現場之後，大概多久可以拿到報價？'],['社區的施工申請，要我去辦還是你們會協助？']];
+  fill.forEach(([q])=>{ if(out.length<7 && !out.find(x=>x.q===q)) out.push({q, why:'每個人都可以問'}); });
+  return out.slice(0,7);
+}
+
+/* ---------- 維立的提醒：改寫自維立的工程施作須知 ----------
+   原則：標題寫清楚適用的情況，只在情況成立時出現 */
+function bossNotes(a){
+  const out = [];
+  const add = (t, b) => { if(out.length<4 && !out.find(x=>x.t===t)) out.push({t,b}); };
+  const old = a.kind==='住了很久的老房子' || a.kind==='中古屋，前屋主剛搬走';
+  if(old) add('拆除舊裝潢的時候', '拆掉舊的櫃子或天花板，連在一起的牆面跟地板可能會跟著受損，要拆開後在現場看過再報價。如果發現鋼筋外露、白蟻、樑柱有狀況，我們會馬上告訴你');
+  if(old || has(a,'pain','老管線不放心')) add('舊管線要換的話', '舊房子的管子有時埋得太深或已經變形，新線穿不過去，就要改成明管或重新配管，這部分會照實際狀況報價');
+  if(a.kind==='新成屋，還沒住過') add('新成屋的電', '會照原本的電源迴路來做，插座新增或移位都不會動到原廠的主迴路，這樣建商的保固才留得住');
+  if(has(a,'pain','怕中途被追加')||has(a,'pain','怕預算超支')) add('擔心預算的話', '建議預算抓 100% 再加 10% 的預備金，拆開天花板才發現漏水、突然想加全熱交換器，這種事很常見，有這筆錢工程才不會停下來');
+  if(old) add('舊牆面要多平', '舊房子的牆面多半不平整，平整度從高到低是：釘新板材再批土、全面批土、只補坑洞、直接粉刷。越平越花工，預算差在這裡');
+  if(a.trade[3]<0) add('在意好整理的話', '純色的系統板、純黑的人造石，比較容易看到水痕跟刮痕，選材的時候可以跟設計師提');
+  add('開工前', '要先跟社區申請施工時間，被鄰居或管委會擋下來會延誤工期，這件事越早辦越好');
+  return out;
+}
+
+/* ---------- 畫面 ---------- */
+function render(){
+  if(S.screen==='intro') return renderIntro();
+  if(S.screen==='step') return renderStep();
+  if(S.screen==='result') return renderResult(S.a);
+  if(S.screen==='compare') return renderCompare();
+}
+function go(patch){ Object.assign(S, patch); render(); window.scrollTo({top:0}); }
+
+function renderIntro(){
+  app.innerHTML = `
+  <div class="intro">
+    <div class="brand">${markTag}維立室內設計</div>
+    <h1>找設計師之前<br>先把自己家想清楚</h1>
+    <p class="lede">六個小問題，大概三分鐘<br>不用留電話，填完就能看到結果</p>
+    <ul class="gets">
+      <li><span class="ic">1</span><div><b>你最不能退讓的是什麼</b><span>用二選一找出來，很多人是這時候才第一次想清楚</span></div></li>
+      <li><span class="ic">2</span><div><b>預算怎麼分、哪些事要先決定</b><span>照維立給屋主的建議，幫你把預算跟順序排出來</span></div></li>
+      <li><span class="ic">3</span><div><b>見設計師時要問的問題</b><span>照你家的狀況列出來，見面時照著問就好</span></div></li>
+      <li><span class="ic">4</span><div><b>跟另一半想的一樣嗎</b><span>兩個人各填一次，直接看出哪裡不一樣</span></div></li>
+    </ul>
+    <div class="btn-row"><button class="btn btn-main" id="start">開始</button></div>
+    <button class="linkish" id="sample">先看一份填好的範例</button>
+  </div>`;
+  document.getElementById('start').onclick = () => go({screen:'step', i:0, a:fresh(), person:1, first:null, sample:false, code:null});
+  document.getElementById('sample').onclick = () => go({screen:'result', a:structuredClone(SAMPLE), person:1, first:null, sample:true, caseKey:null});
+}
+
+function renderStep(){
+  const st = STEPS[S.i], a = S.a, n = STEPS.length;
+  const reply = S.i>0 ? replyAfter(STEPS[S.i-1].key, a) : (S.person===2 ? '換你了，照你自己的想法填就好，不用管前一位怎麼選' : '');
+  let html = `<div class="top">
+      <div class="brand">${markTag}維立室內設計${S.person===2?'・第二位':''}</div>
+      <div class="progress"><span>${S.i+1} / ${n}</span><div class="bar"><i style="width:${S.i/n*100}%"></i></div></div>
+    </div>
+    ${reply?`<div class="bubble">${markTag}<p>${esc(reply)}</p></div>`:''}
+    <div class="q"><h2>${esc(st.title)}</h2>${st.sub?`<p class="sub">${esc(st.sub)}</p>`:''}</div>`;
+  st.groups.forEach(g=>{
+    if(g.showIf && !g.showIf(a)) return;
+    const head = `${g.label?`<div class="label">${esc(g.label)}</div>`:''}${g.why?`<div class="gwhy">${esc(g.why)}</div>`:''}`;
+    if(g.type==='single'||g.type==='multi'){
+      const cur = a[g.id];
+      html += `<div class="group">${head}<div class="${g.block?'stack':'chips'}">`+
+        g.opts.map(o=>{
+          const v = optV(o), d = typeof o==='string' ? '' : o.d;
+          const on = g.type==='single' ? cur===v : (cur||[]).includes(v);
+          return `<button class="chip${g.block?' block':''}" data-g="${g.id}" data-t="${g.type}" data-max="${g.max||''}" data-v="${esc(v)}" aria-pressed="${on}">${esc(v)}${d?`<span class="opt-desc">${esc(d)}</span>`:''}</button>`;
+        }).join('')+`</div></div>`;
+    } else if(g.type==='date'){
+      html += `<div class="group">${head}<input type="date" id="f-${g.id}" value="${esc(a.date||'')}"></div>`;
+    } else if(g.type==='text'){
+      html += `<div class="group">${head}<input type="text" inputmode="decimal" id="f-${g.id}" placeholder="${esc(g.ph)}" value="${esc(a[g.id]||'')}"></div>`;
+    } else if(g.type==='sliders'){
+      html += `<div class="pairs">`+PAIRS.map((p,k)=>{
+        const v = a.trade[k];
+        return `<div class="pair"><div class="ends"><span class="${v<0?'lean':''}">${esc(p[0])}</span><span class="${v>0?'lean':''}">${esc(p[1])}</span></div>
+          <input type="range" min="-2" max="2" step="1" value="${v}" id="f-trade-${k}" data-k="${k}" aria-label="${esc(p[0])} 或 ${esc(p[1])}">
+          <div class="ticks"><span>很在意</span><span>一樣</span><span>很在意</span></div></div>`;
+      }).join('')+`</div>`;
+    } else if(g.type==='photos'){
+      html += `<div class="photos">`+MOODS.map(m=>{
+        const on = (a.mood||[]).includes(m.id);
+        return `<button class="photo" data-m="${m.id}" aria-pressed="${on}"><img src="${IMG[m.id]}" alt="${esc(m.label)}" loading="lazy"><span class="cap">${esc(m.label)}</span><span class="tick">${on?'✓':''}</span></button>`;
+      }).join('')+`</div>`;
+    }
+  });
+  const ok = st.need.every(k => Array.isArray(a[k]) ? a[k].length : a[k]);
+  html += `<div class="nav">
+    <button class="btn btn-ghost" id="back">${S.i===0?'回首頁':'上一步'}</button>
+    <button class="btn btn-main" id="next" ${ok?'':'disabled'}>${S.i===n-1?'看我的整理':'下一步'}</button></div>
+    ${st.need.length?'':'<p class="skip">這一步可以跳過</p>'}`;
+  app.innerHTML = html;
+
+  app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{
+    const g=b.dataset.g, v=b.dataset.v;
+    if(b.dataset.t==='single'){ a[g] = a[g]===v && !st.need.includes(g) ? '' : v; }
+    else { const arr=a[g]||(a[g]=[]); const ix=arr.indexOf(v); const max=+b.dataset.max||99;
+      if(ix>-1) arr.splice(ix,1); else if(arr.length<max) arr.push(v); else { arr.shift(); arr.push(v); } }
+    const y=scrollY; renderStep(); scrollTo({top:y});
+  });
+  app.querySelectorAll('.photo').forEach(b=>b.onclick=()=>{
+    const arr=a.mood, v=b.dataset.m, ix=arr.indexOf(v);
+    if(ix>-1) arr.splice(ix,1); else if(arr.length<3) arr.push(v); else { arr.shift(); arr.push(v); }
+    const y=scrollY; renderStep(); scrollTo({top:y});
+  });
+  app.querySelectorAll('input[type=range]').forEach(r=>r.oninput=()=>{
+    a.trade[+r.dataset.k]=+r.value;
+    const ends=r.parentElement.querySelectorAll('.ends span');
+    ends[0].className=+r.value<0?'lean':''; ends[1].className=+r.value>0?'lean':'';
+  });
+  const d=document.getElementById('f-date'); if(d) d.onchange=()=>{a.date=d.value};
+  const t=document.getElementById('f-budgetNum'); if(t) t.oninput=()=>{a.budgetNum=t.value};
+  document.getElementById('back').onclick=()=> S.i===0 ? go({screen:'intro'}) : go({i:S.i-1});
+  document.getElementById('next').onclick=()=>{
+    if(S.i<n-1) return go({i:S.i+1});
+    if(S.person===2) return go({screen:'compare'});
+    go({screen:'result', caseKey:null});
+  };
+}
+
+const tagsOf = arr => `<span class="tags">${arr.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</span>`;
+
+/* 每份整理單一組代碼，屋主傳到 LINE 時我們才對得起來是哪一份 */
+function code(){
+  if(!S.code){
+    const d = new Date(), z = n => String(n).padStart(2,'0');
+    const r = Math.random().toString(36).slice(2,5).toUpperCase();
+    S.code = `WL${z(d.getMonth()+1)}${z(d.getDate())}-${r}`;
+  }
+  return S.code;
+}
+function summaryText(a, who){
+  const lean = leanings(a.trade), bn = budgetNumber(a);
+  const L = [];
+  L.push(`我用維立的小工具整理了一份需求 代碼 ${code()}${who?' '+who:''}`);
+  L.push(`誰住：${a.owner} 平常${a.people}${(a.members||[]).length?' 有'+a.members.join('、'):''}`);
+  L.push(`房子：${a.kind} 在${a.area}`);
+  L.push(`時間：想${a.when}住進去`);
+  if(lean.length) L.push(`最在意：${lean[0].text}${lean[1]?' 其次是'+lean[1].text:''}`);
+  if((a.pain||[]).length) L.push(`最卡的：${a.pain.join('、')}`);
+  if((a.mood||[]).length) L.push(`喜歡的感覺：${a.mood.map(id=>MOODS.find(m=>m.id===id).label).join('、')}`);
+  L.push(`預算：${a.budget==='心裡大概有個數字' ? (bn?a.budgetNum+' 萬':'心裡有數字') : a.budget}`);
+  L.push('想約個時間聊聊');
+  return L.join(String.fromCharCode(10));
+}
+const lineSend = text => `https://line.me/R/oaMessage/@443xjwvc/?${encodeURIComponent(text)}`;
+
+function sheetHTML(a, who){
+  const lean = leanings(a.trade);
+  const w = weeksLeft(a.date);
+  const today = new Date().toLocaleDateString('zh-TW');
+  const roomBits = [['玄關','entry'],['客廳','living'],['客廳','livingMore'],['餐廳','dining'],['臥室','bedroom']]
+    .flatMap(([l,k])=>(a[k]||[]).map(x=>`${l}：${x}`));
+  const bn = budgetNumber(a);
+  const row = (dt, dd) => dd ? `<div class="row"><dt>${dt}</dt><dd>${dd}</dd></div>` : '';
+  return `<div class="sheet">
+    <div class="sheet-title"><h2>我家的裝潢整理單${who?`・${who}`:''}</h2><span>${today}<br>${code()}</span></div>
+    <dl style="margin:0">
+    ${row('誰住', `${esc(a.owner)}・${esc(a.people)}${a.stay?`・${esc(a.stay)}`:''}${(a.members||[]).length?`<br>${tagsOf(a.members)}`:''}`)}
+    ${row('房子', `${esc(a.kind)}・${esc(a.area)}${(a.special||[]).length?`<br>${tagsOf(a.special)}`:''}`)}
+    ${row('時間', `${esc(a.when)}${w!==null&&w>0?`<br><span style="color:var(--muted);font-size:14px">離 ${esc(a.date)} 還有 ${w} 週左右</span>`:''}`)}
+    ${row('最在意', lean.length? `<span class="big">${esc(lean[0].text)}</span>${lean[1]?`<br>其次是${esc(lean[1].text)}`:''}` : '每一邊都想要，還在想')}
+    ${row('最卡的', tagsOf(a.pain||[]))}
+    ${row('各空間', roomBits.length ? tagsOf(roomBits) : '')}
+    ${row('風格', (a.style||[]).length ? tagsOf(a.style) : '')}
+    ${row('喜歡的感覺', `<div class="thumbs">${(a.mood||[]).map(id=>`<img src="${IMG[id]}" alt="${esc(MOODS.find(m=>m.id===id).label)}">`).join('')}</div>
+      <span style="font-size:14px;color:var(--muted)">${(a.mood||[]).map(id=>esc(MOODS.find(m=>m.id===id).label)).join('、')}</span>`)}
+    ${row('燈光', a.light && a.light!=='還不知道' ? esc(a.light) : '')}
+    ${row('預算', a.budget==='心裡大概有個數字' ? (bn?`約 ${esc(a.budgetNum)} 萬${a.reserve?`・預備金${a.reserve==='有'?'有留':'還沒想到'}`:''}`:'心裡有數字') : esc(a.budget||''))}
+    </dl>
+  </div>`;
+}
+
+function tracksHTML(A, B){
+  return `<div class="tracks">`+PAIRS.map((p,k)=>{
+    const pos = v => (v+2)/4*100;
+    const diff = B && Math.abs(A.trade[k]-B.trade[k])>=2;
+    return `<div class="track${diff?' diff':''}"><div class="ends"><span>${esc(p[0])}</span><span>${esc(p[1])}</span></div>
+      <div class="line"><span class="dot" style="left:${pos(A.trade[k])}%" title="第一位"></span>${B?`<span class="dot b" style="left:${pos(B.trade[k])}%" title="第二位"></span>`:''}</div>
+      ${diff?'<div class="flagtxt">這題你們想的不太一樣</div>':''}</div>`;
+  }).join('')+`</div>`;
+}
+
+/* 比例來自維立的預算建議 */
+function budgetHTML(a){
+  const n = budgetNumber(a);
+  const old = a.kind==='住了很久的老房子';
+  const rows = [
+    ['基礎與硬裝工程',60,70,'拆除、泥作、水電管線、防水、木作、油漆、天花板、地板，是帶不走的裝潢'],
+    ['家具與軟裝',15,20,'沙發、床墊、餐桌椅、窗簾、燈飾，預算緊的話可以分批買，硬裝要一次到位'],
+    ['家電與設備',10,15,'冷氣、冰箱、電視、洗碗機、洗衣機，冷氣跟嵌入式家電要在硬裝階段先決定型號']
+  ];
+  const amt = (lo,hi) => n ? `約 ${Math.round(n*lo/100)} 到 ${Math.round(n*hi/100)} 萬` : `${lo} 到 ${hi}%`;
+  return `<section>
+    <h2>預算怎麼分，心裡先有個底</h2>
+    <p class="sub">${n?`照你填的 ${esc(a.budgetNum)} 萬，用維立建議的比例算給你看`:'這是維立給屋主的建議比例，填了預算數字會直接幫你換算'}</p>
+    <div class="budget">
+      ${rows.map(([l,lo,hi,d])=>`<div class="brow"><div class="top2"><span>${l}</span><span>${amt(lo,hi)}</span></div><div class="track2"><i style="width:${(lo+hi)/2}%"></i></div><small>${d}</small></div>`).join('')}
+      <div class="brow reserve"><div class="top2"><span>另外留預備金</span><span>${n?`約 ${Math.round(n*.1)} 萬`:'再加 10%'}</span></div><div class="track2"><i style="width:10%"></i></div><small>拆開才發現的問題、臨時想加的東西，都靠這筆，工程才不會停擺</small></div>
+      <div class="brow"><div class="top2"><span>設計、丈量、監工費</span><span>依地區跟公司不同</span></div><small>好的設計能幫你避開動線不順、插座不夠這種住進去才發現的困擾</small></div>
+    </div>
+    ${old?'<p class="sub" style="margin-top:12px">你家是老房子，屋齡 20 年以上的話硬裝比例通常會更高，因為要先處理安全跟房子本身的體質</p>':''}
+  </section>`;
+}
+
+function decideHTML(a){
+  const items = [
+    ['全熱交換器或全屋除濕','台灣很潮濕，要在天花板施工前決定'],
+    ['冷氣要吊隱式還是壁掛式','吊隱式比較好看，但要留維修孔'],
+    ['嵌入式家電的型號','洗碗機、烤箱這類要在硬裝階段定好，才能預留管路跟電壓'],
+    ['全戶濾水','通常裝在後陽台，要先留位置'],
+    ['手機在哪裡充電','床頭、沙發旁、餐桌，插座位置先想好，Wi-Fi 分享器也要避開被櫃子擋住'],
+    ['大東西收哪裡','行李箱、吸塵器、掃地機器人、電風扇除濕機，都要有固定的家'],
+    ['喜歡什麼燈光','溫暖黃光 3000K、自然光 4000K、明亮白光 6000K']
+  ];
+  return `<section>
+    <h2>開工前要先想好的事</h2>
+    <p class="sub">這些完工後看不到，等天花板封起來就很難改。現在不用決定，見設計師時記得提，想好了就打勾</p>
+    <ul class="qs">${items.map(([t,w],k)=>`<li><label><input type="checkbox" id="d-${k}"><span>${t}<span class="why">${w}</span></span></label></li>`).join('')}</ul>
+  </section>`;
+}
+
+function caseHTML(a){
+  const order = matchCase(a);
+  if(!S.caseKey || !CASES[S.caseKey]) { S.caseKey = order[0]; S.caseIdx = 0; }
+  const k = S.caseKey, c = CASES[k];
+  let body;
+  if(c.rooms){
+    const r = c.rooms[Math.min(S.caseIdx, c.rooms.length-1)];
+    body = `<div class="tabs">${c.rooms.map((x,i)=>`<button class="chip" data-room="${i}" aria-pressed="${i===S.caseIdx}">${esc(x.label)}</button>`).join('')}</div>
+    <div class="ba">
+      <img src="${r.after}" alt="${esc(r.label)}完工後">
+      <img class="before" src="${r.before}" alt="${esc(r.label)}施工前" id="ba-before">
+      <span class="handle" id="ba-handle"></span>
+      <span class="lab l">施工前</span><span class="lab r">完工</span>
+      <input type="range" min="0" max="100" value="50" id="ba-range" aria-label="拖拉比較施工前後">
+    </div>
+    ${r.note?`<p class="sub" style="margin:10px 0 0">${esc(r.note)}</p>`:''}`;
+  } else {
+    body = `<div class="photos" style="margin-top:0">${c.gallery.map(src=>`<div class="photo" style="cursor:default"><img src="${src}" alt="${esc(c.name)}" loading="lazy"></div>`).join('')}</div>`;
+  }
+  return `<section>
+    <h2>跟你家有點像的一間</h2>
+    <p class="sub">${k===order[0]?'依你挑的風格、照片和屋況配對的，':''}${c.rooms?'左右拖拉，看同一個空間施工前跟完工後':'這間是完工照'}</p>
+    <div class="case-head"><span class="big">${esc(c.name)}</span>${c.lede?`<span>${esc(c.lede)}</span>`:''}</div>
+    ${body}
+    <div class="other">看其他案子：<br>${order.filter(x=>x!==k).map(x=>`<button class="linkish" data-case="${x}">${esc(CASES[x].name)}</button>`).join('　')}</div>
+  </section>`;
+}
+function bindCase(){
+  const keep = fn => ()=>{ fn(); const y=scrollY; render(); scrollTo({top:y}); };
+  app.querySelectorAll('[data-room]').forEach(b=>b.onclick=keep(()=>{ S.caseIdx=+b.dataset.room; }));
+  app.querySelectorAll('[data-case]').forEach(b=>b.onclick=keep(()=>{ S.caseKey=b.dataset.case; S.caseIdx=0; }));
+  const r=document.getElementById('ba-range'); if(!r) return;
+  r.oninput=()=>{ document.getElementById('ba-before').style.clipPath=`inset(0 ${100-r.value}% 0 0)`; document.getElementById('ba-handle').style.left=r.value+'%'; };
+}
+
+function ctaHTML(two){
+  const text = two ? summaryText(S.first,'第一位')+String.fromCharCode(10,10)+summaryText(S.a,'第二位') : summaryText(S.a);
+  return `<section class="cta">
+    <h2>${two?'意見不一樣很正常':'想找人一起看看嗎'}</h2>
+    <p>${two?'把兩個人的整理單一起傳給維立<br>見面時設計師可以直接從你們不一樣的地方聊起':'按下去會開 LINE，整理單的重點已經幫你打好了<br>你看過再送出，設計師不用從頭問一遍'}</p>
+    <a class="btn btn-line" href="${lineSend(text)}" target="_blank" rel="noopener">用 LINE 把整理單傳給設計師</a>
+    <div class="btn-row"><button class="btn btn-ghost" id="copy">複製整理單文字</button></div>
+    <p class="src">代碼 ${code()}　也可以直接截圖上面那張整理單<br>只想先加好友的話，LINE 搜尋 @443xjwvc</p>
+    ${two?'':'<p>想準備得更完整，可以跟設計師要一份維立的「空間需求預審表」，玄關、客廳、臥室一區一區幫你想</p>'}
+  </section>`;
+}
+function bindCta(two){
+  const b = document.getElementById('copy'); if(!b) return;
+  b.onclick = async () => {
+    const text = two ? summaryText(S.first,'第一位')+String.fromCharCode(10,10)+summaryText(S.a,'第二位') : summaryText(S.a);
+    try { await navigator.clipboard.writeText(text); b.textContent='已經複製了'; }
+    catch(e){ b.textContent='複製失敗，請直接截圖'; }
+    setTimeout(()=>{ b.textContent='複製整理單文字'; }, 2500);
+  };
+}
+
+function renderResult(a){
+  const qs = questionsFor(a), notes = bossNotes(a);
+  const lean = leanings(a.trade);
+  app.innerHTML = `<div class="res">
+    <div class="res-head">
+      ${S.sample?`<div class="banner"><p class="note" style="margin:0"><b>這是範例</b>：一位新北老屋屋主的假想答案</p><button class="linkish" id="restart">自己填一次</button></div>`:''}
+      <div class="brand">${markTag}維立室內設計</div>
+      <h1>${lean.length?`你最在意的，是${esc(lean[0].text)}`:'你每一邊都想要，這很正常'}</h1>
+      <p class="meta">這是依你的答案整理出來的，可以截圖存著</p>
+    </div>
+    ${sheetHTML(a)}
+    <section>
+      <h2>你的取捨</h2>
+      <p class="sub">點越靠哪一邊，代表你越在意那一邊</p>
+      ${tracksHTML(a)}
+    </section>
+    ${budgetHTML(a)}
+    ${decideHTML(a)}
+    <section>
+      <h2>見設計師時，可以問這幾題</h2>
+      <p class="sub">照你家的狀況挑的，見面時照著問，問完就打勾</p>
+      <ul class="qs">${qs.map((x,k)=>`<li><label><input type="checkbox" id="q-${k}"><span>${esc(x.q)}<span class="why">${esc(x.why)}</span></span></label></li>`).join('')}</ul>
+    </section>
+    <section>
+      <h2>維立想先跟你說</h2>
+      <div class="boss">
+        <div class="who"><span class="mark">維</span>維立的設計師</div>
+        <blockquote>「空間的價值不在於昂貴的材料，而在於是否精確地接住了您的生活。」</blockquote>
+        <p class="sub" style="margin:0">依你的狀況，挑了幾件開工前最好先知道的事</p>
+        <ul class="boss-list">${notes.map(x=>`<li><b>${esc(x.t)}</b>${esc(x.b)}</li>`).join('')}</ul>
+        <span class="src">整理自維立的工程施作須知</span>
+      </div>
+    </section>
+    ${caseHTML(a)}
+    <section class="duo">
+      <h2>另一半也想的一樣嗎</h2>
+      <p>${S.sample?'看看範例裡，另一半填完的比對長怎樣':'把手機交給他，換他填一次<br>填完直接比給你們看，哪幾題想的不一樣'}</p>
+      <button class="btn" id="duo">${S.sample?'看範例比對':'換另一半填'}</button>
+    </section>
+    ${ctaHTML(false)}
+    <button class="linkish" id="again">重新填一次</button>
+  </div>`;
+  bindCase(); bindCta(false);
+  document.getElementById('duo').onclick = S.sample
+    ? ()=>go({screen:'compare', first:structuredClone(SAMPLE), a:structuredClone(SAMPLE_B), person:2})
+    : ()=>go({screen:'step', i:0, first:structuredClone(a), a:fresh(), person:2});
+  const rs=document.getElementById('restart'); if(rs) rs.onclick=()=>go({screen:'step', i:0, a:fresh(), person:1, first:null, sample:false, code:null});
+  document.getElementById('again').onclick=()=>go({screen:'intro', sample:false, first:null, person:1, code:null});
+}
+
+function renderCompare(){
+  const A=S.first, B=S.a;
+  const diffs = PAIRS.filter((p,k)=>Math.abs(A.trade[k]-B.trade[k])>=2).length;
+  const split = k => ({both:(A[k]||[]).filter(x=>(B[k]||[]).includes(x)), a:(A[k]||[]).filter(x=>!(B[k]||[]).includes(x)), b:(B[k]||[]).filter(x=>!(A[k]||[]).includes(x))});
+  const pain = split('pain'), style = split('style');
+  const bothMood = (A.mood||[]).filter(x=>(B.mood||[]).includes(x));
+  const fieldDiff = [['owner','誰住'],['people','幾個人'],['when','想入住的時間'],['budget','預算']].filter(([k])=>(A[k]||'')!==(B[k]||''));
+  const total = diffs + fieldDiff.length;
+  const tags = arr => arr.length ? tagsOf(arr) : '<span style="color:var(--muted);font-size:14px">沒有</span>';
+  const block = (title, sp) => `<section><h2>${title}</h2>
+      <div class="col" style="margin-bottom:14px"><h3>兩個人都選</h3>${tags(sp.both)}</div>
+      <div class="cols"><div class="col"><h3>只有第一位</h3>${tags(sp.a)}</div><div class="col"><h3>只有第二位</h3>${tags(sp.b)}</div></div></section>`;
+  app.innerHTML = `<div class="res">
+    <div class="res-head">
+      ${S.sample?`<div class="banner"><p class="note" style="margin:0"><b>這是範例</b>：同一個家，兩個人的假想答案</p><button class="linkish" id="restart">自己填一次</button></div>`:''}
+      <div class="brand">${markTag}維立室內設計</div>
+      <h1>${total ? `你們有 ${total} 個地方想的不一樣` : '你們兩個想的很像'}</h1>
+      <p class="meta">${total ? '這些就是找設計師之前，可以先在家聊開的' : '很難得，見設計師的時候會順很多'}</p>
+    </div>
+    <section>
+      <h2>取捨比一比</h2>
+      <div class="legend" style="margin-bottom:12px"><span><i></i>第一位</span><span><i class="b"></i>第二位</span></div>
+      ${tracksHTML(A,B)}
+    </section>
+    ${fieldDiff.length?`<section><h2>這些也不一樣</h2><ul class="qs">${fieldDiff.map(([k,l])=>`<li><label style="grid-template-columns:1fr;cursor:default"><span><b>${l}</b><span class="why">第一位：${esc(A[k]||'沒選')}　第二位：${esc(B[k]||'沒選')}</span></span></label></li>`).join('')}</ul></section>`:''}
+    ${block('最卡的事', pain)}
+    <section>
+      <h2>都喜歡的照片</h2>
+      ${bothMood.length?`<div class="thumbs">${bothMood.map(id=>`<img src="${IMG[id]}" alt="" style="width:120px;height:90px">`).join('')}</div><p class="sub" style="margin-top:8px">${bothMood.map(id=>esc(MOODS.find(m=>m.id===id).label)).join('、')}</p>`:'<p class="sub">這次沒有挑到同一張，可以一起再看一次照片聊聊</p>'}
+    </section>
+    ${sheetHTML(A,'第一位')}
+    ${sheetHTML(B,'第二位')}
+    ${ctaHTML(true)}
+    <button class="linkish" id="again">重新填一次</button>
+  </div>`;
+  bindCta(true);
+  const rs=document.getElementById('restart'); if(rs) rs.onclick=()=>go({screen:'step', i:0, a:fresh(), person:1, first:null, sample:false, code:null});
+  document.getElementById('again').onclick=()=>go({screen:'intro', sample:false, first:null, person:1, code:null});
+}
+
+render();
+</script>
+
+</body>
+</html>
