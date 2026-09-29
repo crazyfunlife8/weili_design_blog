@@ -67,6 +67,11 @@ img{display:block;max-width:100%;height:auto}
 {{ if not $desc }}{{ $desc = .Site.Params.description }}{{ end }}
 {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
 
+{{/* Robots: noindex taxonomy/term/section list pages — only articles and home get indexed */}}
+{{ if or (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "section") }}
+<meta name="robots" content="noindex, follow">
+{{ end }}
+
 {{/* Canonical */}}
 <link rel="canonical" href="{{ .Permalink }}">
 
