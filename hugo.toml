@@ -34,6 +34,9 @@ summaryLength = 70
   instagram_url = "https://www.instagram.com/weilidesign/"
   threads_url = "https://www.threads.net/@weilidesign"
   og_image = "/og-default.jpg"
+  ga4_measurement_id = "G-PQBPZBCJ09"
+  ga4_property_id = "557071328"
+  ga4_stream_id = "15940349062"
 
 [taxonomies]
   category = "categories"
