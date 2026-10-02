@@ -148,3 +148,11 @@ faq_items:
 ---
 
 *本文由台灣執業室內設計師撰寫，追加費用情境依 2026 年實際接案觀察整理。各案屋況不同，建議以現場勘查評估為準。[室內設計](https://en.wikipedia.org/wiki/Interior_design)行業費用規範資訊另可參閱 Wikipedia；台灣裝潢消費相關權益資訊可查詢[行政院消費者保護委員會](https://cpc.ey.gov.tw/)官網。*
+
+---
+
+## 延伸閱讀
+
+- [簽約前必問設計師的 7 個問題：合約追加費用授權怎麼寫才有保障]({{< relref "posts/renovation-process/contract-questions-before-signing" >}})
+- [為什麼同樣 30 坪，報價差 100 萬？設計師解析費用落差的 5 個根本原因]({{< relref "posts/cost-analysis/why-renovation-price-gap" >}})
+- [報價單怎麼看？設計師教你識別 3 種常見模糊報價手法]({{< relref "posts/choose-designer/how-to-read-renovation-quote" >}})

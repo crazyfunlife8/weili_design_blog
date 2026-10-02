@@ -154,3 +154,11 @@ H2 結構（前排參考）: 新成屋流程 / 老屋翻新流程 / 費用差異
 ---
 
 *本文為維立設計主理人第一手接案觀察整理，2026 年 9 月更新。台灣裝潢行情因地區、材質、工程複雜度差異甚大，數字僅供參考框架，建議諮詢設計師取得個案估算。*
+
+---
+
+## 延伸閱讀
+
+- [第一次裝潢從哪開始？設計師說這 8 節點少走冤路]({{< relref "posts/renovation-process/first-time-renovation-guide" >}})
+- [老屋翻新費用怎麼抓？30 年以上老屋必考慮的隱藏工程費]({{< relref "posts/cost-analysis/old-house-renovation-hidden-costs" >}})
+- [裝潢費用一坪多少？設計師告訴你費用怎麼拆]({{< relref "posts/cost-analysis/renovation-cost-per-ping" >}})

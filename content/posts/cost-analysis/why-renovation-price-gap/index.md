@@ -148,3 +148,11 @@ faq_items:
 ---
 
 *本文由台灣執業室內設計師撰寫，數字引用依 2026 年台灣市場行情估算，各地區及屋況不同請以現場勘查評估為準。[室內設計](https://en.wikipedia.org/wiki/Interior_design)行業費用結構說明參考 Wikipedia；台灣裝潢費用透明化相關消費資訊另可參閱[行政院消費者保護會](https://cpc.ey.gov.tw/)網站。*
+
+---
+
+## 延伸閱讀
+
+- [報價單怎麼看？設計師教你識別 3 種常見模糊報價手法]({{< relref "posts/choose-designer/how-to-read-renovation-quote" >}})
+- [裝潢費用一坪多少？設計師告訴你費用怎麼拆]({{< relref "posts/cost-analysis/renovation-cost-per-ping" >}})
+- [追加費用怎麼來的？設計師誠實說 4 個常見追加情境和防範方法]({{< relref "posts/cost-analysis/renovation-extra-costs" >}})

@@ -144,3 +144,11 @@ H2 結構: 前排以「合約重點條款清單型」為主（100室內設計走
 裝潢是幾十萬到幾百萬的決定，合約是你唯一的保護。問這 7 個問題不是在刁難設計師，而是在建立一個雙方都清楚的合作框架。我接案時，願意仔細回答這些問題的屋主，通常裝潢過程也最順。
 
 關於簽約後的第一次裝潢完整流程，你可以繼續看[第一次裝潢從哪開始：設計師說這 8 節點少走冤路]({{< relref "first-time-renovation-guide" >}})，以及費用追加的防範方式在[追加費用 4 個情境與合約防線]({{< relref "renovation-extra-costs" >}})分類。
+
+---
+
+## 延伸閱讀
+
+- [第一次裝潢從哪開始？設計師說這 8 節點少走冤路]({{< relref "posts/renovation-process/first-time-renovation-guide" >}})
+- [追加費用怎麼來的？設計師誠實說 4 個常見追加情境和防範方法]({{< relref "posts/cost-analysis/renovation-extra-costs" >}})
+- [找室內設計師前，這 5 件事設計師不會主動告訴你]({{< relref "posts/choose-designer/things-designers-wont-tell-you" >}})

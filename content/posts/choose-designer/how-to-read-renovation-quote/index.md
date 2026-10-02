@@ -127,3 +127,11 @@ H2 結構: Answer-first 開頭（3種手法清單）→ H2-1 工程費另計型 
 把報價單當成一份待填的表格，而不是一份已完成的文件——有問題就補問，這是你在簽約前最重要的一道保護。
 
 如果你想了解報價之外、簽約時的具體合約條款要留意什麼，可以參考這篇：[找室內設計師前，這 5 件事設計師不會主動告訴你]({{< relref "things-designers-wont-tell-you" >}})。關於不同設計師報價差距為什麼這麼大的根本原因分析，可以看：[為什麼同樣 30 坪，報價差 100 萬？設計師解析費用落差的 5 個根本原因]({{< relref "why-renovation-price-gap" >}})。
+
+---
+
+## 延伸閱讀
+
+- [找室內設計師前，這 5 件事設計師不會主動告訴你]({{< relref "posts/choose-designer/things-designers-wont-tell-you" >}})
+- [為什麼同樣 30 坪，報價差 100 萬？設計師解析費用落差的 5 個根本原因]({{< relref "posts/cost-analysis/why-renovation-price-gap" >}})
+- [簽約前必問設計師的 7 個問題：合約追加費用授權怎麼寫才有保障]({{< relref "posts/renovation-process/contract-questions-before-signing" >}})

@@ -173,3 +173,11 @@ H2 結構: 5 件事各一 H2 + 結語
 
 **如何限制追加費用不失控？**
 在合約中加入追加費用授權金額上限條款，例如「單次追加超過新台幣 X 萬元須書面授權」；並要求所有追加項目的書面簽核。設計師不會主動提這條，你要主動要求寫進去。
+
+---
+
+## 延伸閱讀
+
+- [報價單怎麼看？設計師教你識別 3 種常見模糊報價手法]({{< relref "posts/choose-designer/how-to-read-renovation-quote" >}})
+- [簽約前必問設計師的 7 個問題：合約追加費用授權怎麼寫才有保障]({{< relref "posts/renovation-process/contract-questions-before-signing" >}})
+- [追加費用怎麼來的？設計師誠實說 4 個常見追加情境和防範方法]({{< relref "posts/cost-analysis/renovation-extra-costs" >}})

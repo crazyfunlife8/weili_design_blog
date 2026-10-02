@@ -174,3 +174,11 @@ H2 結構: 前排文章全是「10大風格圖鑑」圖庫展示型；本站從�
 風格的選擇從來不是品味高低的問題，而是「你的生活方式和這個風格的物理邏輯合不合」的問題。下次有人問你「你喜歡什麼風格」，你不需要回答一個風格名詞，你只需要回答：我幾點關燈、我的桌面通常有沒有東西、我家有沒有小孩。
 
 這五個生活問題的答案，比任何風格測驗都更能幫你找到對的方向。
+
+---
+
+## 延伸閱讀
+
+- [第一次裝潢從哪開始？設計師說這 8 節點少走冤路]({{< relref "posts/renovation-process/first-time-renovation-guide" >}})
+- [找室內設計師前，這 5 件事設計師不會主動告訴你]({{< relref "posts/choose-designer/things-designers-wont-tell-you" >}})
+- [裝潢費用一坪多少？設計師告訴你費用怎麼拆]({{< relref "posts/cost-analysis/renovation-cost-per-ping" >}})

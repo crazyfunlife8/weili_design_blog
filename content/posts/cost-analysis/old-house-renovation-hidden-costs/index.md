@@ -154,4 +154,12 @@ H2 結構: 5類隱藏費用清單(answer-first) → 水電管線 → 防水 → 
 
 ---
 
+## 延伸閱讀
+
+- [新成屋裝潢 vs 老屋翻新，流程差在哪？設計師的時程規劃比較]({{< relref "posts/renovation-process/new-vs-old-house-renovation" >}})
+- [為什麼同樣 30 坪，報價差 100 萬？設計師解析費用落差的 5 個根本原因]({{< relref "posts/cost-analysis/why-renovation-price-gap" >}})
+- [裝潢費用一坪多少？設計師告訴你費用怎麼拆]({{< relref "posts/cost-analysis/renovation-cost-per-ping" >}})
+
+---
+
 *本文費用數字為 2026 年台北市場行情參考，中南部約為 7–8 折。實際報價依屋況、工班、設計師收費標準有所不同，建議取得 2–3 份報價單後比較。*
