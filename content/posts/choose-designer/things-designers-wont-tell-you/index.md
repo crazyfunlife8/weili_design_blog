@@ -181,3 +181,4 @@ H2 結構: 5 件事各一 H2 + 結語
 - [報價單怎麼看？設計師教你識別 3 種常見模糊報價手法]({{< relref "posts/choose-designer/how-to-read-renovation-quote" >}})
 - [簽約前必問設計師的 7 個問題：合約追加費用授權怎麼寫才有保障]({{< relref "posts/renovation-process/contract-questions-before-signing" >}})
 - [追加費用怎麼來的？設計師誠實說 4 個常見追加情境和防範方法]({{< relref "posts/cost-analysis/renovation-extra-costs" >}})
+- [不知道自己喜歡什麼風格？設計師問你這 5 個生活問題幫你決定]({{< relref "posts/style-basics/how-to-choose-interior-style" >}})

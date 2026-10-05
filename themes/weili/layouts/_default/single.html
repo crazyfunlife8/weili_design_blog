@@ -13,6 +13,7 @@
       {{ if not .Date.IsZero }}
       <time class="article-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       {{ end }}
+      {{ with .Site.Params.authorURL }}<a class="article-author" href="{{ . }}" rel="author">{{ $.Site.Params.author }}</a>{{ else }}<span class="article-author">{{ .Site.Params.author }}</span>{{ end }}
       <span class="article-read">閱讀約 {{ div (len (split .Content " ")) 200 | default 1 }} 分鐘</span>
     </div>
     <h1>{{ .Title }}</h1>

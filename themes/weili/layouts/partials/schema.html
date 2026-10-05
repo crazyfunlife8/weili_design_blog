@@ -26,7 +26,7 @@
   "url" .Permalink
   "datePublished" (.Date.Format "2006-01-02")
   "dateModified" (.Lastmod.Format "2006-01-02")
-  "author" (dict "@type" "Organization" "name" .Site.Params.author "url" .Site.Params.authorURL)
+  "author" (dict "@type" "Person" "name" .Site.Params.author "url" .Site.Params.authorURL)
   "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
   "speakable" $speakable
   "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)

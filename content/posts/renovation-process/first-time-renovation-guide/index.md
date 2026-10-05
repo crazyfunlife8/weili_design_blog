@@ -196,3 +196,4 @@ H2 結構: 前排以「1→7 步驟清單型」+「各步注意事項」為主�
 - [簽約前必問設計師的 7 個問題：合約追加費用授權怎麼寫才有保障]({{< relref "posts/renovation-process/contract-questions-before-signing" >}})
 - [新成屋裝潢 vs 老屋翻新，流程差在哪？設計師的時程規劃比較]({{< relref "posts/renovation-process/new-vs-old-house-renovation" >}})
 - [裝潢費用一坪多少？設計師告訴你費用怎麼拆]({{< relref "posts/cost-analysis/renovation-cost-per-ping" >}})
+- [不知道自己喜歡什麼風格？設計師問你這 5 個生活問題幫你決定]({{< relref "posts/style-basics/how-to-choose-interior-style" >}})
