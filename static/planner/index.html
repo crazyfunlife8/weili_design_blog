@@ -7,6 +7,7 @@
 <meta property="og:title" content="裝潢前想清楚｜維立室內設計">
 <meta property="og:description" content="三分鐘，整理出你家的需求、預算怎麼分，還有見設計師該問什麼">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://weilidesign.net/planner/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -284,6 +285,12 @@ function matchCase(a){
 }
 const LINE_URL = 'https://line.me/R/ti/p/@443xjwvc';
 
+/* 維立總監 10-06 給的每坪概抓（萬），上限 null 代表「以上」 */
+const HTYPES = [
+  ['老屋翻修（公寓、華廈）', 15, null],
+  ['舊屋翻新（舊的集合式住宅大樓）', 10, 15],
+  ['新成屋', 6, 10]
+];
 const STEPS = [
   {key:'who', title:'這個家，是誰要住', sub:'先讓我們認識一下這個家',
     groups:[
@@ -305,7 +312,10 @@ const STEPS = [
     groups:[{id:'mood', type:'photos', max:3}], need:['mood']},
   {key:'budget', title:'最後，預算的部分', sub:'寫給你自己看的，填了數字會幫你算怎麼分配',
     groups:[
-      {id:'budget', label:'', type:'single', block:true, opts:['心裡大概有個數字','完全還沒概念','先不想說']},
+      {id:'htype', label:'你家比較接近哪一種', why:'這是維立總監的概抓，實際要到現場看過、討論評估之後，才會確認最後的預算書', type:'single', block:true,
+        opts:HTYPES.map(([v,lo,hi])=>({v, d: hi ? `一坪抓 ${lo} 到 ${hi} 萬` : `一坪抓 ${lo} 萬以上`}))},
+      {id:'ping', label:'室內大概幾坪（不確定可以空著）', type:'text', ph:'例如 25'},
+      {id:'budget', label:'你自己心裡的預算', type:'single', block:true, opts:['心裡大概有個數字','完全還沒概念','先不想說']},
       {id:'budgetNum', label:'大概多少萬（寫範圍也可以）', type:'text', showIf:a=>a.budget==='心裡大概有個數字', ph:'例如 200 或 180 到 220'}
     ], need:['budget']}
 ];
@@ -316,6 +326,7 @@ const SAMPLE = {
   trade:[-2,1,-1,-2,1],
   pain:['老管線不放心','怕中途被追加','家人意見不一樣'],
   mood:['bq-living','bq-cabinet','nh-dining'],
+  htype:'舊屋翻新（舊的集合式住宅大樓）', ping:'18',
   budget:'心裡大概有個數字', budgetNum:'200'
 };
 const SAMPLE_B = Object.assign({}, SAMPLE, {
@@ -390,6 +401,16 @@ function weeksLeft(d){
 function leanings(trade){
   return trade.map((v,k)=>({k, v, abs:Math.abs(v), text: v<0 ? PAIRS[k][0] : PAIRS[k][1]}))
     .filter(x=>x.abs>=1).sort((x,y)=>y.abs-x.abs || x.k-y.k);
+}
+/* 照維立總監的概抓算，坪數沒填就只給每坪的數字 */
+function estimate(a){
+  const t = HTYPES.find(x=>x[0]===a.htype);
+  if(!t) return null;
+  const m = String(a.ping||'').match(/\d+(\.\d+)?/);
+  const p = m ? Number(m[0]) : null;
+  const [, lo, hi] = t;
+  if(!p) return {t, p:null, text: hi ? `一坪 ${lo} 到 ${hi} 萬` : `一坪 ${lo} 萬以上`};
+  return {t, p, text: hi ? `約 ${Math.round(p*lo)} 到 ${Math.round(p*hi)} 萬` : `約 ${Math.round(p*lo)} 萬起`};
 }
 function budgetNumber(a){
   if(a.budget!=='心裡大概有個數字') return null;
@@ -536,7 +557,7 @@ function renderStep(){
     ends[0].className=+r.value<0?'lean':''; ends[1].className=+r.value>0?'lean':'';
   });
   const d=document.getElementById('f-date'); if(d) d.onchange=()=>{a.date=d.value};
-  const t=document.getElementById('f-budgetNum'); if(t) t.oninput=()=>{a.budgetNum=t.value};
+  app.querySelectorAll('input[type=text]').forEach(t=>t.oninput=()=>{a[t.id.slice(2)]=t.value});
   document.getElementById('back').onclick=()=> S.i===0 ? go({screen:'intro'}) : go({i:S.i-1});
   document.getElementById('next').onclick=()=>{
     if(S.i<n-1) return go({i:S.i+1});
@@ -561,7 +582,7 @@ function summaryText(a, who){
   const L = [];
   L.push(`我用維立的小工具整理了一份需求 代碼 ${code()}${who?' '+who:''}`);
   L.push(`誰住：${a.owner} 平常${a.people}${(a.members||[]).length?' 有'+a.members.join('、'):''}`);
-  L.push(`房子：${a.kind} 在${a.area}`);
+  L.push(`房子：${a.kind} 在${a.area}${a.htype?' '+a.htype:''}${estimate(a)?.p?' 約'+estimate(a).p+'坪':''}`);
   L.push(`時間：想${a.when}住進去`);
   if(lean.length) L.push(`最在意：${lean[0].text}${lean[1]?' 其次是'+lean[1].text:''}`);
   if((a.pain||[]).length) L.push(`最卡的：${a.pain.join('、')}`);
@@ -584,7 +605,7 @@ function sheetHTML(a, who){
     <div class="sheet-title"><h2>我家的裝潢整理單${who?`・${who}`:''}</h2><span>${today}<br>${code()}</span></div>
     <dl style="margin:0">
     ${row('誰住', `${esc(a.owner)}・${esc(a.people)}${a.stay?`・${esc(a.stay)}`:''}${(a.members||[]).length?`<br>${tagsOf(a.members)}`:''}`)}
-    ${row('房子', `${esc(a.kind)}・${esc(a.area)}${(a.special||[]).length?`<br>${tagsOf(a.special)}`:''}`)}
+    ${row('房子', `${esc(a.kind)}・${esc(a.area)}${a.htype?`<br>${esc(a.htype)}${estimate(a)?.p?`・約 ${estimate(a).p} 坪`:''}`:''}${(a.special||[]).length?`<br>${tagsOf(a.special)}`:''}`)}
     ${row('時間', `${esc(a.when)}${w!==null&&w>0?`<br><span style="color:var(--muted);font-size:14px">離 ${esc(a.date)} 還有 ${w} 週左右</span>`:''}`)}
     ${row('最在意', lean.length? `<span class="big">${esc(lean[0].text)}</span>${lean[1]?`<br>其次是${esc(lean[1].text)}`:''}` : '每一邊都想要，還在想')}
     ${row('最卡的', tagsOf(a.pain||[]))}
@@ -620,6 +641,7 @@ function budgetHTML(a){
   const amt = (lo,hi) => n ? `約 ${Math.round(n*lo/100)} 到 ${Math.round(n*hi/100)} 萬` : `${lo} 到 ${hi}%`;
   return `<section>
     <h2>預算怎麼分，心裡先有個底</h2>
+    ${estHTML(a)}
     <p class="sub">${n?`照你填的 ${esc(a.budgetNum)} 萬，用維立建議的比例算給你看`:'這是維立給屋主的建議比例，填了預算數字會直接幫你換算'}</p>
     <div class="budget">
       ${rows.map(([l,lo,hi,d])=>`<div class="brow"><div class="top2"><span>${l}</span><span>${amt(lo,hi)}</span></div><div class="track2"><i style="width:${(lo+hi)/2}%"></i></div><small>${d}</small></div>`).join('')}
@@ -627,7 +649,38 @@ function budgetHTML(a){
       <div class="brow"><div class="top2"><span>設計、丈量、監工費</span><span>依地區跟公司不同</span></div><small>好的設計能幫你避開動線不順、插座不夠這種住進去才發現的困擾</small></div>
     </div>
     ${old?'<p class="sub" style="margin-top:12px">你家是老房子，屋齡 20 年以上的話硬裝比例通常會更高，因為要先處理安全跟房子本身的體質</p>':''}
+    ${missHTML(a)}
   </section>`;
+}
+
+/* 總監的每坪概抓：有選房型才出現，三種都列出來，選到的那列標起來 */
+function estHTML(a){
+  const e = estimate(a);
+  if(!e) return '';
+  return `<div class="budget" style="margin:4px 0 22px">
+    <div class="brow"><div class="top2"><span>照維立總監的概抓${e.p?`，你家約 ${e.p} 坪`:''}</span><span>${e.text}</span></div>
+    <small>${HTYPES.map(([v,lo,hi])=>`<span style="${v===a.htype?'color:var(--ink);font-weight:600':''}">${v} 一坪 ${hi?`${lo} 到 ${hi} 萬`:`${lo} 萬以上`}</span>`).join('<br>')}</small>
+    <small>以上是概抓，實際要到現場看過、討論評估之後，才會確認最後的預算書</small></div>
+  </div>`;
+}
+
+/* 改寫自維立的工程施作須知：報價比想像高，多半差在這些看不到的地方 */
+function missHTML(a){
+  const old = a.kind==='住了很久的老房子' || a.kind==='中古屋，前屋主剛搬走';
+  const items = [
+    old && ['拆除跟清運','拆掉舊櫃子、舊天花板，連在一起的牆面地板可能跟著受損，要拆開後在現場看過才知道要補多少'],
+    old && ['舊管線','舊房子的管子有時埋太深或已經變形，新線穿不過去，就要改明管或重新配管'],
+    ['牆面要多平','從最平到最普通：釘新板材再批土、全面批土、只補坑洞、直接粉刷，越平越花工，報價常常差在這一項'],
+    ['社區的總水閥','施工要先關總水閥，老社區的水閥如果鎖不緊，換水閥是另外的費用'],
+    ['自己買的設備','自己買的燈具、衛浴、家電如果缺件或尺寸不合，師傅要再跑一趟，會多一次進場的工錢'],
+    old && ['拆開才看得到的','鋼筋外露、白蟻、樑柱有狀況，這些拆開前沒人看得到，就是預備金存在的原因']
+  ].filter(Boolean);
+  return `<div style="margin-top:20px">
+    <h3 style="font-size:16px;margin:0 0 4px">報價比想像高，多半差在這些地方</h3>
+    <p class="sub" style="margin:0 0 10px">網路上看到的數字，常常沒算到這些看不到的工程</p>
+    <ul class="decide">${items.map(([t,d])=>`<li><b>${t}</b><small>${d}</small></li>`).join('')}</ul>
+    <p class="sub" style="margin-top:10px">每間房子差多少要看現場，把整理單傳給我們，總監看過會直接跟你聊你家的狀況</p>
+  </div>`;
 }
 
 function decideHTML(a){
